@@ -1,0 +1,22 @@
+{
+  "name": "tweet_rest_api",
+  "version": "1.0.0",
+  "description": "Class Assignment practicing creating REST APIs",
+  "main": "backend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jharwick23/Tweet_REST_Api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jharwick23/Tweet_REST_Api/issues"
+  },
+  "homepage": "https://github.com/jharwick23/Tweet_REST_Api#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
