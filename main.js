@@ -1,12 +1,14 @@
-const axios = require("axios");
-const express = require("express");
+const axios = require(`axios`);
+const express = require(`express`);
 const app = express();
 
-app.get("/tweets", async (req, res) => {
+const PORT = 3001;
+
+app.get(`/tweets`, async (req, res) => {
   try {
     // Fetch JSON data from URL
     const response = await axios.get(
-      "https://foyzulhassan.github.io/files/favs.json"
+      `https://foyzulhassan.github.io/files/favs.json`
     );
     const tweets = response.data;
 
@@ -20,15 +22,15 @@ app.get("/tweets", async (req, res) => {
     // Respond with filtered JSON data
     res.json(newTweetGet);
   } catch (error) {
-    console.error("Error fetching JSON:", error);
-    res.status(500).json({ error: "Failed to fetch JSON data" });
+    console.error(`Error fetching JSON:`, error);
+    res.status(500).json({ error: `Failed to fetch JSON data` });
   }
 });
 
-app.get("/external-links", async (req, res) => {
+app.get(`/external-links`, async (req, res) => {
   try {
     const response = await axios.get(
-      "https://foyzulhassan.github.io/files/favs.json"
+      `https://foyzulhassan.github.io/files/favs.json`
     );
     const tweets = response.data;
 
@@ -41,7 +43,7 @@ app.get("/external-links", async (req, res) => {
 
     tweets.forEach((tweet) => {
       // Store tweet text in variable
-      const tweetText = tweet.text || "";
+      const tweetText = tweet.text || ``;
 
       // Use our regular expression to find URL's within the tweet's text
       const tweetLinks = tweetText.match(urlRegExp) || [];
@@ -53,16 +55,16 @@ app.get("/external-links", async (req, res) => {
     // Respond with links grouped by id
     res.json(linksByTweetId);
   } catch (error) {
-    console.error("Error fetching JSON:", error);
-    res.status(500).json({ error: "Failed to fetch JSON data" });
+    console.error(`Error fetching JSON:`, error);
+    res.status(500).json({ error: `Failed to fetch JSON data` });
   }
 });
 
-app.get("/tweets/:id", async (req, res) => {
+app.get(`/tweets/:id`, async (req, res) => {
   try {
     // Fetch JSON data from URL
     const response = await axios.get(
-      "https://foyzulhassan.github.io/files/favs.json"
+      `https://foyzulhassan.github.io/files/favs.json`
     );
     const tweets = response.data;
 
@@ -73,7 +75,7 @@ app.get("/tweets/:id", async (req, res) => {
     const tweet = tweets.find((t) => t.id.toString() === tweetId);
 
     if (!tweet) {
-      return res.status(404).json({ error: "Tweet not found" });
+      return res.status(404).json({ error: `Tweet not found` });
     }
 
     // Directly extract the desired properties
@@ -85,16 +87,16 @@ app.get("/tweets/:id", async (req, res) => {
 
     res.json(tweetDetails);
   } catch (error) {
-    console.error("Error fetching JSON:", error);
-    res.status(500).json({ error: "Failed to fetch JSON data" });
+    console.error(`Error fetching JSON:`, error);
+    res.status(500).json({ error: `Failed to fetch JSON data` });
   }
 });
 
-app.get("/user/:screen_name", async (req, res) => {
+app.get(`/user/:screen_name`, async (req, res) => {
   try {
     // Fetch JSON data from URL
     const response = await axios.get(
-      "https://foyzulhassan.github.io/files/favs.json"
+      `https://foyzulhassan.github.io/files/favs.json`
     );
     const tweets = response.data;
 
@@ -107,7 +109,7 @@ app.get("/user/:screen_name", async (req, res) => {
     );
 
     if (!userTweet) {
-      return res.status(404).json({ error: "Tweet not found" });
+      return res.status(404).json({ error: `Tweet not found` });
     }
 
     const user = userTweet.user;
@@ -123,12 +125,12 @@ app.get("/user/:screen_name", async (req, res) => {
 
     res.json(profile);
   } catch (error) {
-    console.error("Error fetching JSON:", error);
-    res.status(500).json({ error: "Failed to fetch JSON data" });
+    console.error(`Error fetching JSON:`, error);
+    res.status(500).json({ error: `Failed to fetch JSON data` });
   }
 });
 
 // Start the server
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });
