@@ -5,18 +5,12 @@ This project is a class assignment focused on practicing the creation of REST AP
 ## Prerequisites
 
 Before you begin, ensure you have the following installed on your system:
-- **Node.js** (latest LTS version recommended)
+- **Node.js**
 - **npm** (comes bundled with Node.js)
 
 ## Installation
 
-1. **Clone the Repository**
-   ```sh
-   git clone https://github.com/your-username/Tweet_REST_Api.git
-   cd Tweet_REST_Api
-   ```
-
-2. **Install Dependencies**
+1. **Install Dependencies**
    ```sh
    npm install
    ```
@@ -25,12 +19,30 @@ Before you begin, ensure you have the following installed on your system:
 
 Start the API server with:
    ```sh
-   npm start
+   node main.js
    ```
 
 By default, the server will run on `http://localhost:3000/`.
 
 ## Available Endpoints
+
+### Get All Tweets
+   ```sh
+   GET /tweets
+   ```
+   Fetches all tweets with creation date, id, and text.
+   
+### Get All Tweets External Links
+   ```sh
+   GET /external-links
+   ```
+   Fetches all tweets external dates grouped by id.
+
+### Get Specific Tweets by ID
+   ```sh
+   GET /tweets/:id
+   ```
+   Fetches tweets by id and provides creation date, tweet, and user screen name.
 
 ### Get User Profile
    ```sh
