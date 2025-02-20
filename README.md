@@ -1,5 +1,5 @@
 # Tweet_REST_Api
-Class Assignment practicing creating REST APIs
+**Class Assignment practicing creating REST APIs**
 
 ## Requirements
 Node.js and npm

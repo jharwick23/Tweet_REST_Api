@@ -2,7 +2,7 @@
   "name": "tweet_rest_api",
   "version": "1.0.0",
   "description": "Class Assignment practicing creating REST APIs",
-  "main": "backend.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jharwick23/Tweet_REST_Api#readme",
   "dependencies": {
+    "axios": "^1.7.9",
     "express": "^4.21.2"
   }
 }
