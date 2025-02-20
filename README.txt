@@ -70,5 +70,4 @@ By default, the server will run on `http://localhost:3000/`.
 ## Notes
 - Ensure that **Node.js and npm** are installed before running `npm install`.
 - Modify the port in `main.js` if needed.
-- The API fetches Twitter user data from a provided JSON file and filters it accordingly.
 
